@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0048)http://ht-lab.com/freeutils/bin2hex/bin2hex.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+        <!-- Comments -->
+        <title>Bin2Hex converter</title>
+        <meta name="generator" content="Namo WebEditor">
+<style type="text/css">
+*{margin:0; padding:0;}
+
+body {
+	font:76% Verdana,Tahoma,Arial,sans-serif;
+	line-height:1.4em;
+	text-align:center;
+	color:#303030;
+	background:#e8eaec;
+}
+
+a{
+	color:#467aa7;
+	font-weight:bold;
+	text-decoration:none;
+	background-color:inherit;
+}
+
+a:hover{
+	color:#2a5a8a;
+	text-decoration:none;
+	background-color:inherit;
+}
+a img{border:none;}
+
+p{padding:0 1.6em 1.6em 0;}
+p form{
+	margin-top:0;
+	margin-bottom:20px;
+}
+
+
+/*------------------------- Header styles --------------------------*/
+
+#container{
+	width:1020px;
+	margin:10px auto; /* margin between blocks*/
+	padding:1px 1px;
+	text-align:left;
+	background:#ffffff;
+	color:#303030;
+	border:2px solid #a0a0a0;
+}
+
+#header{
+
+	height:125px;
+	width:1018px;
+	margin:0 1px 1px 1px;
+	color:#ffffff;
+	background:#467aa7;
+
+	background-image: url(../images/htlab.gif);
+	background-repeat: no-repeat;
+	background-position: right;
+
+}
+
+#header h1{
+	padding:20px 0 5px 20px;
+	font-size:2.4em;
+	background-color:inherit;
+	color: #ffffff;
+	letter-spacing:-2px;
+	font-weight:normal;
+	width:10em;	/*leave space for image, firefox only! */
+}
+
+#header h2{
+	margin:10px 0 25px 40px;
+	font-size:1.4em;   /* FireFox */
+	background-color:inherit;
+	color: #ffffff;
+	letter-spacing:-1px;
+	font-weight:normal;
+	width:20em;	 /*leave space for image, firefox only! */
+}
+
+
+/* -------------------------------- Navigation -------------------------------*/
+#menuList {
+	position:static; /*absolute; relative; */
+	font-size:0.9em;
+	z-index:100;
+}
+
+#mainMenu {
+	position: absolute;
+	top: 110px;
+}
+
+#menuList ul {
+	z-index:100;
+}
+
+#menuList li {
+	z-index:100;
+	display:inline;
+	list-style: none;
+}
+
+a.starter {
+	z-index:100;
+	color:#FFFFFF; 	/* Main Menu white */
+	float: left;
+	width: 11em;    /* size of top menu item */
+	cursor: pointer;
+	text-align: center;
+	font-weight: bold;
+	background:#578bb8;	 /* Main Menu background */
+	border: 1px solid gray;
+	margin: 4px;	  /* Horizontal between menu items */
+}
+
+a.starter:hover, a.starter:active, a.starter:focus {
+	color: #000; /* color of submenu?*/
+	background:#80b0da;
+
+}
+
+.menu {
+	text-align: left;
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+}
+
+.menu li {
+	width:100%;
+}
+.menu li a {
+	background: #5AB0C5;
+	z-index:100;
+	color: #fff;
+	display: block;
+	/*width:100%;*/
+	font-size: 1em;
+	/*padding:1px; */ /* Vertical Padding between submenu items */
+
+	/*margin: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: none;
+	margin-top:-2px;*/
+
+	width: 11em;    /* size of second menu item */
+	cursor: pointer;
+	text-align: center;
+	font-weight: bold;
+	background:#578bb8;	 /* Main Menu background */
+	border: 1px solid gray;
+	/*margin: 1px; */
+}
+
+.menu li a:hover, .menu li a:active, .menu li a:focus {
+	color: #000; /* color of submenu?*/
+	background:#80b0da;
+}
+
+/*--------------------------- Content styles -------------------------*/
+
+
+#content{
+	/*float:left;*/
+	width:1000px;
+	font-size:1.0em;
+	padding:0 0 0 20px;
+}
+
+#content h1{
+	display:block;
+	margin:16px 0 16px 0;
+	padding:10px 0 10px 0;
+	font-size:3.3em;
+	font-weight:bold;
+	text-align:center;
+	/*letter-spacing:-1px;*/
+	color: #467aa7;
+	background-color:inherit;
+}
+
+#content h2{
+	font-weight:bold;
+	margin:0 0 5px 0;
+	font-size:1.3em;
+	color:#467aa7;
+	padding: 1.0em 0 0.5em 0;
+}
+
+#content h2 a{
+	font-weight:bold;
+	margin:0 0 5px 0;
+	font-size:1.3em;
+	color:#467aa7;
+	padding: 1.0em 0 0.5em 0;
+}
+
+#content h3{
+	margin:0 0 5px 0;
+	font-size:1.2em;
+	/*letter-spacing:-1px;*/
+	color:#467aa7;
+	padding: 1.0em 0 0.5em 0;
+}
+
+#content h4{
+	margin:0 0 5px 0;
+	font-size:1.1em;
+	color:#467aa7;
+	padding: 1.0em 0 0.5em 0;
+}
+
+#content ul, ol{
+	padding: 1em 0 1em 2em;
+}
+
+#content a:hover,#subcontent a:hover{text-decoration:underline;}
+
+/*-------------------------- Forms Styles --------------------------*/
+
+.submit input{
+	color:#467aa7;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-left: 1.5em
+
+}
+
+.question{
+	margin-left: 2.0em;
+}
+
+.answer input{
+	color:#00CC00;
+	/*font-weight:bold;*/
+	border: none;
+	margin-left: 1.5em
+}
+
+/*---------------------- Code Table, see vh2sc_tut----------------- */
+
+table#codetable2 {
+
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+	width: 985px;
+	margin:5px 0 5px 0;
+}
+
+table#codetable2 td {
+	font: 76% "courier new";
+	border: 1px solid #CCC;
+	padding: 1.0em 1.0em 0 1.0em;
+	line-height: normal;
+	background: #FFFFCC;
+}
+
+/*----------------------- used on code snippets --------------------*/
+#codeid {
+	font: 1.0em "courier new";
+	/*line-height: normal;*/
+	border: 1px solid #CCC;
+	padding: 1.0em 1.0em 1.0em 1.0em;
+	margin:0px 15px 15px 0px;
+	/*line-height: normal; */
+	background: #FFFFCC;
+}
+
+
+/*-------------------------- Table Styles --------------------------*/
+/* table with small line spacing, see aes86 */
+
+table#table1 {
+	font: 0.5em/1.0em Verdana, Arial, Helvetica, sans-serif;
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+	width: 900px;
+}
+
+/* Cells */
+table#table1 td {
+	border: 1px solid #CCC;
+	padding: 0.5em 0 0 0;
+}
+
+/*----------------------------------------------------------------------*/
+/* Table size back to normal, see cpu86 page                            */
+/* table2 used for bordered tables, table3 for hidden table             */
+/*----------------------------------------------------------------------*/
+table#table2 {
+	/*font-size:1.0em; 	*/
+	font: 1.0em/1.0em Verdana, Arial, Helvetica, sans-serif;
+	line-height:1.0em;
+	padding: 0.5em 0 0 0;
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+	width: 900px;
+}
+
+/* Cells */
+table#table2 td {
+	border: 1px solid #CCC;
+	padding: 0.5em 0 0 0;
+}
+
+/* Used for text + picture table, see cpu86 */
+table#table3 {
+	font-size:1.0em;
+	line-height:1.4em;
+	padding: 0.5em 0 0 0;
+	border-collapse: collapse;
+	width: 900px;
+}
+
+/* Cells */
+table#table3 td {
+	padding: 0.5em 0 0 0;
+}
+/*----------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------*/
+/* Next table is to fix the line-height back to normal, see AES86       */
+/*----------------------------------------------------------------------*/
+
+/*table#sample {
+	font: 1.0em/1.0em Verdana, Arial, Helvetica, sans-serif;
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+	width: 970px;
+}
+
+table#sample td {
+	border: 1px solid #CCC;
+	padding: 0.5em 0 0 0;
+	line-height: normal;
+}*/
+
+
+.boxleft {
+	width: 700px;
+	float: left;
+   /*	padding-left: 0.5em; */
+	margin:0 0 20px  0;
+   /*	border:2px solid #a0a0a0; */
+}
+
+.boxright {
+	width: 250px;
+	float: right;
+	padding-left: 0.5em;
+	padding-top: 20px;
+	margin:5px 5px 5px 5px;
+	border:1px solid #a0a0a0;
+}
+
+
+/*------------------------- Footer styles --------------------------*/
+#footer{
+	clear:both;
+	width:1018px;
+	padding:5px 0;
+	margin:0 1px;
+	font-size:0.9em;
+	color:#f0f0f0;
+	background:#467aa7;
+}
+#footer p{
+	padding:0;
+	margin:0;
+	text-align:center;
+}
+#footer a{
+	color:#f0f0f0;
+	background-color:inherit;
+	font-weight:bold;
+}
+#footer a:hover{
+	color:#ffffff;
+	background-color:inherit;
+	text-decoration: underline;
+}
+
+</style>
+
+<style type="text/css"></style></head>
+
+	<div id="container">
+    <div id="content">
+
+<h1>BIN2HEX</h1>
+<h2 align="center">Utility to convert a Binary file to an Intel Hex file<br>
+&nbsp;</h2>
+<p><font color="navy"><b>BIN2HEX</b></font> is a simple utility which converts
+a binary file to an Intel HEX file. There are lots of these converter on web,
+however, I couldn't find one that also generated an <b>execute record</b>. This is
+useful if you want to use the format for bootstrap loaders. BIN2HEX is limited to 64Kbyte binary files.</p>
+<h2>Usage</h2>
+<p><font color="navy"><b>BIN2HEX</b></font>
+&lt;input_binary_filename&gt; &lt;output_hex_filename&gt; &nbsp;{<b>-o</b> <i>offset</i>}
+{<b>-s</b> <i>segment</i>} {<b>-e</b> <i>execute</i>}<br></p>
+<p>Where Optional:</p>
+<p><i>offset </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output file address offset
+in hex. <br><i>segment</i> &nbsp;&nbsp;Extended address record offset in hex
+(e.g. Segment address on a 8086).<br><i>execute</i> &nbsp;&nbsp;&nbsp;Execute
+address offset in hex (e.g. IP address on a 8086).</p>
+<p>The Intel Hex format is quite simple and consist of 6 fields:</p>
+<table id="table1">
+    <tbody><tr>
+        <td><p align="center"><font size="1">Start Char : </font></p></td>
+        <td><p align="center"><font size="1">Length(1)    </font></p></td>
+        <td><p align="center"><font size="1">Address(2)   </font></p></td>
+        <td><p align="center"><font size="1">Rec Type(1)  </font></p></td>
+        <td><p align="center"><font size="1">Data(n)      </font></p></td>
+        <td><p align="center"><font size="1">Checksum(1)  </font></p></td>
+    </tr>
+</tbody></table>
+<p>A record always start with the '<font color="navy"><b>:</b></font>' character
+followed by a 1 byte data&nbsp;length. Most converters default to a length of
+32 bytes. The length just indicates the number of Data bytes&nbsp;and does not
+include the other fields. After the length byte you get a 2 byte address field
+for the data. </p>
+<p>Intel specified 6 record types as shown below. Bin2Hex support all but the
+last 2 types which are used for (Intel) processors that can address more than
+1Mbyte, e.g. a 386. In most cases a hex file consist of data records (00) followed
+by an EOF record (01).</p>
+<p><font face="Courier"><b>00</b> Data Record<br><b>0l</b> End of File Record<br><b>02</b>
+Extended Segment Address Record<br><b>03</b> Start Segment Address Record<br><b>04</b>
+Extended Linear Address Record<br><b>05</b> Start Linear Address Record</font></p>
+<p>After the data you get a fairly simple checksum which consist of a two's&nbsp;compliment
+modulo 256 addition of all the bytes excluding the start character and the checksum
+itself.</p>
+<h2>Examples</h2>
+<p>Input binary file <i>d.bin</i>&nbsp;(displayed using cygwin's <i>dump</i>
+program)</p>
+<p><font face="Courier">Address &nbsp;&nbsp;0 1 &nbsp;2 3 &nbsp;4 5 &nbsp;6
+7 &nbsp;8 9 &nbsp;A B &nbsp;C D &nbsp;E F <br>-------- &nbsp;---- ---- ----
+---- ---- ---- ---- ---- <br>00000000 &nbsp;4350 5538 3820 426f 6f74 6c6f 6164
+6572 <br>00000010 &nbsp;2052 6561 6479 3e0a 0d00 8cc8 8ed8 33c0 <br>00000020
+&nbsp;8ec0 06bf 0001 57cb 5250 baf9 02ec 2402 <br>00000030 &nbsp;74fb baf8 0258
+ee5a c352 baf9 02ec 2401 <br></font></p>
+<p><b><font color="navy">BIN2HEX</font></b> d.bin d.hex</p>
+<p><font face="Courier">:20</font><font face="Courier" color="navy">0000</font><font face="Courier">00435055383820426F6F746C6F616465722052656164793E0A0D008CC88ED833C046<br>:200020008EC006BF000157CB5250BAF902EC240274FBBAF80258EE5AC352BAF902EC240183<br>:00000001FF</font></p>
+<p>Binary file is converted to hex starting at address 0x0000.</p>
+<p><b><font color="navy">BIN2HEX</font></b> d.bin d.hex -o 0100</p>
+<p><font face="Courier">:20</font><font face="Courier" color="navy">0100</font><font face="Courier">00435055383820426F6F746C6F616465722052656164793E0A0D008CC88ED833C045<br>:200120008EC006BF000157CB5250BAF902EC240274FBBAF80258EE5AC352BAF902EC240182<br>:00000001FF</font></p>
+<p>The starting load address has changed to 0x0100.</p>
+<p><font color="navy"><b>BIN2HEX</b></font> d.bin d.hex -o 0100 -s 0200</p>
+<p><font face="Courier" color="navy">:020000020200FA</font><font face="Courier"><br>:20010000435055383820426F6F746C6F616465722052656164793E0A0D008CC88ED833C045<br>:200120008EC006BF000157CB5250BAF902EC240274FBBAF80258EE5AC352BAF902EC240182<br>:00000001FF</font></p>
+<p>The -s command will result in an extra "02" record being generated
+(first line). The 02 record is an <i>extended address record</i> and is normally
+used to change the 8086/8088 segment register (CS). If the above file was loaded
+on an 8086 system then the starting address would be 0200:0100 (0x02100).</p>
+<p><font color="navy"><b>BIN2HEX</b></font> d.bin d.hex -o 0100 -s 0200 -e 013A</p>
+<p><font face="Courier">:020000020200FA<br>:20010000435055383820426F6F746C6F616465722052656164793E0A0D008CC88ED833C045<br>:200120008EC006BF000157CB5250BAF902EC240274FBBAF80258EE5AC352BAF902EC240182<br></font><font face="Courier" color="navy">:040000030200013ABC</font></p>
+<p>To execute a program issue the -e command which replaces the EOF record (:00000001FF)
+with a so called<i> Start Segment Address Record</i> (03). In the above example
+the start address is 0200:013A. The EOF record is not required since the boostrap
+loader will jump to the execute address after verifying the checksum.</p>
+<h2>Download Utility</h2>
+<ul>
+    <li><a href="http://ht-lab.com/freeutils/bin2hex/bin2hex.zip">DOS executable version
+    1.1</a> <font color="black">[zipped, 25KByte, tested on Win XP]<br>
+&nbsp;</font></li>
+</ul>
+<h2>Some Links</h2>
+<ul>
+    <li><a href="http://www.interlog.com/~speff/usefulinfo/Hexfrmt.pdf">Original
+    Intel Spec</a> (pdf) <a href="http://home.att.net/~jackklein/x86/x86_main.html">same
+    here</a></li>
+    <li><a href="http://www.keil.com/support/docs/1584.htm">Keil Technical Support</a></li>
+    <li><a href="http://www.8052.com/tutintel.phtml">8051 Example</a></li>
+    <li><a href="http://www.keil.com/download/docs/bin2hex.zip.asp">Keil's version</a></li>
+    <li>and lots and lots more...</li>
+</ul>
+<p align="center"><a href="http://ht-lab.com/index.html" target="_parent"><img src="data:image/gif;base64,R0lGODlhOAA5APcAAAAAABANCRgSDBkXFScPAywVBCMcEjcYBSslGjkhESoqKTgvIj00JDY2NkMiB1k1BF48Ekc7J2UrCWQ5CnUuCXA4DUxBL1dKNV1QOmtHD3BLE3hTFmRUO31dJntiPkNDQ1xcW2tcQXBeQ3lmRmxsbHV1dYY4C5w+DYdED4BbHp9BDpJJEZZeNIlkJoVuPZRtKphhNZlyLZt3N6JFD6hMEaxRErRbFaZaMq1hLLlrOIhnTYh1VZZ4SqF+QLR/ZNl6OqaBPZqDXZyGYKiGRqiKXLCPT7KQTLiYVqmOZquSZq2XdbKVaL+fcLuhdcKeZsCiXsemacqpdNGtd9aze+SERoqKiJ+enLKfgbmlhr69u8Ollsi3mdy5g8m8p+G9iNbFqNfMttvRvefEjezKkvDOlPfVme7Tqe7bvPXZpvPduPnjt8nJxdHLyNnZ2eDVwfDewurh0Pjmxfbs2fvw2+np6Pr05/799f///////////////////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAHcALAAAAAA4ADkAAAj/AO8IHEiwoMGDCBMqXLiQwQCGECNGxACihIIAEjNqFHhBQYmPHx5uHKmwY5USJ0t8uEiyJUEMHj9+PLmSpcuRHWXqBNmgAYKbGnPKTDlTpYIGNoEuFLpT544qH3omVYowJommTaMqUACAatWrWMNGRYrR68sPV8GG1QligNSyZgUaQFuChN26H9V+BBHgQICtXLvGvVNgx128Ou/ypXDChN+tAASbLWBDh927acHyNWGDxozGfgdEjpuAig0YdS9nJiGAs43Xnk9QIDDabOkfNm6kvlx3gOvXwGt8pk2aChXcLFTbDSChBvDnsAkMLm0cN4zLbSU8r+F5xvMC042L/7eRnARz2DNu+NDCxjtw8MXFHyc/QPvrGWva6G/j/jV8swbkIN9xNZjg3H376defDf95FZmA8uH23AwJ8vfdYHcAEACE1UE3wwcB0CHigg2apSGHEgKnQgkgiEgHiRgKdGKHz53g4og2rFCBA3BhOGOKr6lAhx12rFFFAQFEJlmMGQKQA5A2mABVkrUxaZCGONiAwgR+KWklQ0p6+eWYZJZp5kZhpqnmmmy2KaZCVZoZZ0FLninjQXXaeSdBeeq5559+8jnQknMW+qaMhgrGpqAZ8llnlYsi+mhtke5J6KSDXpoppGLOSSeghiJ6paJvhilqQoo6uuapjooqWVeUrl86KKiRehprk7jGqiajmraKK52k5gprsKjSCiyrmZ7aKbEIpZqsr7+yqquyfc7a6LPYVjrtr5Ve2yu2kmL6p65pMnptoOaeiy6g6gbaZ7VlwuvpmPMC6+a9+Mq6rkQBAQA7" width="56" height="57" border="0" name="image1"></a></p>
+</div>
+</div>
+
+</body></html>

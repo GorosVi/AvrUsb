@@ -1,0 +1,10 @@
+# This file contains additions to standard avrdude config
+
+#------------------------------------------------------------
+# ATtiny2313 - link to .t23 file extention
+#------------------------------------------------------------
+# Completely identical to AT90PWM316 (including the signature!)
+
+part parent "t2313"
+     id = "t23";
+;
